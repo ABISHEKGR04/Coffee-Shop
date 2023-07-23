@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url(./wp4717526-vintage-autumn-colors-wallpapers.jpg);
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+
+        form {
+            font-size: 1.6rem;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 style="color: rgb(243, 240, 240); font-size: 50px;">Login</h1>
+    </div>
+    <center>
+        <form action="Basic Web Page.html" id="membershipForm" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td><label for="UserName">User Name:</label></td>
+                    <td><input type="text" id="UserName" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" minlength="6" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">DOB:</label> </td>
+                    <td><input type="date" id="dob"></td>
+                </tr>
+                <tr>
+                    <td><label for="country">Country:</label></td>
+                    <td><select id="country" required>
+                            <option value="">Select your country</option>
+                            <option value="usa">India</option>
+                            <option value="uk">UK</option>
+                            <option value="canada">Dubai</option>
+                            <option value="usa">USA</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>Preferred :</label></td>
+                    <td><select id="Coffee">
+                            <option value="">Coffee</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                    <td> <input type="reset" value="Reset"></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+    <script>
+        function validateForm() {
+            const fullNameInput = document.getElementById("fullName");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+
+            if (fullNameInput.value.trim() === "") {
+                alert("Please enter your full name.");
+                return false;
+            }
+
+            if (emailInput.value.trim() === "") {
+                alert("Please enter your email address.");
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (passwordInput.value.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
